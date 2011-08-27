@@ -1,0 +1,53 @@
+---------------------------------
+--          THE BASICS         --
+---------------------------------
+//Current as of 8/27/2011 12:45 A.M.//
+
+- The board will need to be an 8x8 board
+
+- In this game, the user will NOT be forced to make a move resulting in a point if they have the opprotunity
+
+- Positions 29-32 (inclusive) and 1-4 (inclusive) will be identified as a special type 'end'
+
+- If the game determines that there are no legal moves for a player left, their turn will be skipped
+  - If two consecutive turns are skipped, the game is a draw
+  - If
+
+- Pieces will initialize in alternating squares (every other square will be empty)
+
+- The other end of the board will initialize the opposite side to fill in the inverse positions 
+as the other side with pieces
+
+- FEATURE: We will determine who gets to go first by doing a dice roll. 
+  - The top pieces will be represented by a roll 1-5.  
+  - The bottom pieces will be represented by a roll 6-10.
+
+- Players get the opprotunity to move after their opponent has gone in an alternating fashion, 
+starting from the first move made by the individual that wins the dice roll.
+
+- An illegal move is categorized as one of the following:
+  - Moving a piece backward that is not granted 'King' piece status
+  - Moving a piece in any fashion other than kitty-corner (diagonal) fashion
+  - Attempting to move a piece where another piece already is
+  - Attempting to move a piece outside of the board
+
+- A point will be gained if a user moves their piece and any of these conditions are met
+  - The player makes a move to a position n+7 and an opposing piece was at position n+3
+  - The player makes a move to a position n+9 and an opposing piece was at position n+4
+  - The player makes a move to a position n-7 and an opposing piece was at position n-3
+  - The player makes a move to a position n-9 and an opposing piece was at position n-4
+  - The player makes a move to a position type 'end' and the following holds true:
+    - absval((position-original) - (new-position)) = 7 or 9
+
+- When a player has any of their pieces reach an opponent's 'end' the piece that reaches will be granted type 'king'
+
+---------------------------------
+--           Functions         --
+---------------------------------
+
+- IntializeBoard
+  - This will create a board of pieces at the default positions (see: http://www.playjava.com/images/board.gif)
+- StartRoll
+  - This will be the roll that is started immediately after InitializeBoard that will determine who gets to go first
+- PromptTurn
+  - This will prompt the user to make their move depending on who's turn it is
