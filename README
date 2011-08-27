@@ -42,11 +42,16 @@ starting from the first move made by the individual that wins the dice roll.
 - When a player has any of their pieces reach an opponent's 'end' the piece that reaches will be granted type 'king'
 
 ---------------------------------
+--           Classes         --
+---------------------------------
+
+- Board
+  - This will be the board class that will hold data as necessary (should be abstract and moldable)
+
+---------------------------------
 --           Functions         --
 ---------------------------------
 
-- IntializeBoard
-  - This will create a board of pieces at the default positions (see: http://www.playjava.com/images/board.gif)
 - StartRoll
   - This will be the roll that is started immediately after InitializeBoard that will determine who gets to go first
 - PromptTurn
