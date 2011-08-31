@@ -18,15 +18,19 @@ class board():
     def setLocation(self, row, col, piece):
         if self.board[row][col] == "EMPTY":
             self.board[row][col] = piece
-            return 0
+            return 0    #good, piece was set correctly
         else:
             print "bad move"
             return -1
+            
+    def movePieceFrom(rowOrig, colOrig, rowNew, ColNew, piece):
+        print "finish this later"
+            
     def printBoard(self):
         for row in self.board.keys():
-            if row == "EMPTY":
-                print self.board[row]
-            else:
-                print "FALSE"
-                (self.board[row]).printPiece()
+            for col in self.board[row].keys()
+                if self.board[row][col] != "EMPTY":
+                    self.board[row][col].print()    ##if it is not "empty" then it is a piece, print that shit
+                else:
+                    print "FALSE"   #there ain't shit here!
         
