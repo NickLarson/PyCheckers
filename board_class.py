@@ -27,10 +27,10 @@ class board():
         print "finish this later"
             
     def printBoard(self):
+        print "---Piece---------| Row |---| Column |---"
         for row in self.board.keys():
-            for col in self.board[row].keys()
+            for col in self.board[row].keys():
                 if self.board[row][col] != "EMPTY":
-                    self.board[row][col].print()    ##if it is not "empty" then it is a piece, print that shit
-                else:
-                    print "FALSE"   #there ain't shit here!
+                    print self.board[row][col].printPiece(), "  ", row, "\t\t", col   ##if it is not "empty" then it is a piece, print that shit
+                    ##print "FALSE"   #there ain't shit here! Removed the print, just clutters shit up brah!
         
