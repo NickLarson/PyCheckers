@@ -6,6 +6,7 @@ class board():
     """
     def __init__(self, size):
         self.board = {}
+        self.sizes = size
         for row in range(1,size+1):
             self.board[row] = {}                  ##Set the board to be full of dictionaries
             for column in range(1,size+1):
@@ -21,3 +22,11 @@ class board():
         else:
             print "bad move"
             return -1
+    def printBoard(self):
+        for row in self.board.keys():
+            if row == "EMPTY":
+                print self.board[row]
+            else:
+                print "FALSE"
+                (self.board[row]).printPiece()
+        

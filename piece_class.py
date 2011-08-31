@@ -12,5 +12,6 @@ class piece():
     def set_color(self, new_color):
         self.color = new_color
     def set_status(self, new_status):
-        self.status = new_status
-        
+        self.status = new_status    
+    def printPiece(self):
+        return self.color, self.status
